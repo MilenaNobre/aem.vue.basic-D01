@@ -6,7 +6,7 @@
         cq:lastModifiedBy="admin"
         cq:template="/conf/vue/settings/wcm/templates/spa-page-template"
         jcr:primaryType="cq:PageContent"
-        jcr:title="My Vue App"
+        jcr:title="My Vue App - Desafio 01"
         sling:resourceType="vue/components/page"
         pwaCachestrategy="staleWhileRevalidate"
         pwaDisplay="standalone"
