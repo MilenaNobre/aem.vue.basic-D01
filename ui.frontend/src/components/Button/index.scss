@@ -1,0 +1,25 @@
+#btn {
+    width: 216px;
+    height: 68px;
+    left: 740px;
+    top: 663px;
+    background: #333333;
+}
+span {
+    font-family: monospace;
+    font-style: normal;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height */
+
+    letter-spacing: -0.035em;
+    text-transform: uppercase;
+}
+@media (max-width: 650px) {
+    #btn {
+        width: 185px;
+        height: 57px;
+    }
+}
