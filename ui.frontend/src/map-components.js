@@ -3,6 +3,12 @@ import AppPage from './components/Page/AppPage'
 import CheckBox from './components/Checkbox/Checkbox'
 import Header from './components/Header/Header'
 import Image from './components/Image/Image'
+
+// components to the challenge
+import ActionButton from './components/Button/ActionButton'
+import TextTitle from './components/TextTitle/Text'
+import Footer from './components/Footer/Footer'
+
 import {
   withComponentMappingContext,
   AllowedComponentsContainer,
@@ -58,3 +64,8 @@ MapTo('vue/components/container')(
     }
   }
 )
+
+// NotFound Component Mapping
+MapTo('vue/components/button')(ActionButton)
+MapTo('vue/components/text')(TextTitle)
+MapTo('vue/components/footer')(Footer)
