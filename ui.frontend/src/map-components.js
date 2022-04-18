@@ -67,5 +67,5 @@ MapTo('vue/components/container')(
 
 // NotFound Component Mapping
 MapTo('vue/components/button')(ActionButton)
-MapTo('vue/components/text')(TextTitle)
+MapTo('vue/components/text-title')(TextTitle)
 MapTo('vue/components/footer')(Footer)
