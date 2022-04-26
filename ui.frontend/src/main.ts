@@ -5,6 +5,9 @@ import App from './App'
 import VueRouter from 'vue-router'
 import { Constants } from '@mavice/aem-vue-editable-components'
 
+import '@fortawesome/fontawesome-free/css/all.css'
+import '@fortawesome/fontawesome-free/js/all.js'
+
 Vue.use(VueRouter)
 
 document.addEventListener('DOMContentLoaded', () => {

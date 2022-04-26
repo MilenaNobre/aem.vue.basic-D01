@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button id='btn' ><span> {{ titleButton }} </span></button>
+    <button :class='typeButton' ><span> {{ titleButton }} </span></button>
   </div>
 </template>
 
@@ -11,7 +11,8 @@ export default {
     titleButton: {
       type: String,
       default: 'back to homepage'
-    }
+    },
+    typeButton: { String }
   }
 }
 </script>

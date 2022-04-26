@@ -1,6 +1,6 @@
 <template>
-  <div :class="style">
-    <p>{{ text }}</p>
+  <div :class="styleTitle">
+    <p :style="{ color, fontFamily : font }"> {{ text }}</p>
   </div>
 </template>
 
@@ -8,9 +8,17 @@
 export default {
   name: 'Text',
   props: {
-    style: {
+    styleTitle: {
       type: String,
       default: 'title'
+    },
+    color: {
+      type: String,
+      default: '#333333'
+    },
+    font: {
+      type: String,
+      default: 'monospace'
     },
     text: {
       type: String

@@ -12,10 +12,11 @@
   <!-- AEM page model -->
   <meta property="cq:pagemodel_root_url" content="<%= VUE_APP_PAGE_MODEL_PATH%>" />
 
-  <!-- AEM Base ClientLib -->
-  <link rel="stylesheet" href="/etc.clientlibs/vue/clientlibs/clientlib-base.css" type="text/css" />
+    <!-- AEM Base ClientLib -->
+    <link rel="stylesheet" href="/etc.clientlibs/vue/clientlibs/clientlib-base.css" type="text/css" />
+    <link rel="stylesheet" href="global.scss" type="text/css" />
 
-  <!-- In development mode, redirect from "/" to app root -->
+    <!-- In development mode, redirect from "/" to app root -->
   <script>
     if ('<%= NODE_ENV%>' === 'development' && location.pathname === '/' && '<%= VUE_APP_ROOT %>') {
       location.href = '<%= VUE_APP_ROOT %>';

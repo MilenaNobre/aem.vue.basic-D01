@@ -3,10 +3,12 @@ import AppPage from './components/Page/AppPage'
 import CheckBox from './components/Checkbox/Checkbox'
 import Header from './components/Header/Header'
 import Image from './components/Image/Image'
+import CustomClasses from './components/CustomClasses/CustomClasses'
 
 // components to the challenge
 import ActionButton from './components/Button/ActionButton'
 import TextTitle from './components/TextTitle/Text'
+import Input from './components/Input/Input'
 import Footer from './components/Footer/Footer'
 
 import {
@@ -65,7 +67,11 @@ MapTo('vue/components/container')(
   }
 )
 
+// CustomClasses Component Mapping
+MapTo('vue/components/custom-classes')(CustomClasses, EditConfig)
+
 // NotFound Component Mapping
 MapTo('vue/components/button')(ActionButton)
 MapTo('vue/components/text-title')(TextTitle)
+MapTo('vue/components/input')(Input)
 MapTo('vue/components/footer')(Footer)
