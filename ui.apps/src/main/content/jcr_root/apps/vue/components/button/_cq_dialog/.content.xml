@@ -30,6 +30,19 @@
                                     value="btn-primary"/>
                         </items>
                     </selectType>
+                    <urlPage cq-msm-lockable="./url"
+                         fieldLabel="URL Redirect"
+                         jcr:primaryType="nt:unstructured"
+                         name="./url"
+                         rootPath="/content"
+                         sling:resourceType="cq/gui/components/coral/common/form/pagefield"/>
+                    <urlNotFound cq-msm-lockable="./url"
+                         fieldLabel="URL Redirect Not Found"
+                         jcr:primaryType="nt:unstructured"
+                         name="./urlNotFound"
+                         rootPath="/content"
+                         sling:resourceType="cq/gui/components/coral/common/form/pagefield"/>
+
 
                 </items>
             </column>
