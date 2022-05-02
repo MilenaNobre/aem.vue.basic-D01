@@ -1,0 +1,25 @@
+.container-weather {
+  margin-right: 70px;
+  margin-top: 20px;
+}
+.weather-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+p {
+  font-family: 'Mark Pro';
+  margin: 0;
+  font-weight: 700;
+  color: #222222;
+}
+.region {
+  text-align: center;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.temperature {
+  font-size: 48px;
+  line-height: 61px;
+}

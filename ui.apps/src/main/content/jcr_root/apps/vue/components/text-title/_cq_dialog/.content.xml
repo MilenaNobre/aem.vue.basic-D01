@@ -40,6 +40,12 @@
                             <titletText jcr:primaryType="nt:unstructured"
                                    text="Label"
                                    value="title-text"/>
+                            <pageHomeTitle jcr:primaryType="nt:unstructured"
+                                   text="Text home"
+                                   value="page-home-title"/>
+                            <pageHomeSubtitle jcr:primaryType="nt:unstructured"
+                                      text="Text home subtitle"
+                                      value="page-home-subtitle"/>
                         </items>
                     </selectStyle>
                     <selectStyleColor
@@ -54,6 +60,9 @@
                             <white jcr:primaryType="nt:unstructured"
                                    text="Gray"
                                    value="#E0E0E0"/>
+                            <red jcr:primaryType="nt:unstructured"
+                                   text="Red"
+                                   value="#C12D18"/>
                         </items>
                     </selectStyleColor>
                     <selectStyleFont
@@ -68,6 +77,9 @@
                             <monospace jcr:primaryType="nt:unstructured"
                                    text="Monospace"
                                    value="monospace"/>
+                            <poppins jcr:primaryType="nt:unstructured"
+                                       text="Poppins"
+                                       value="Poppins"/>
                         </items>
                     </selectStyleFont>
                 </items>

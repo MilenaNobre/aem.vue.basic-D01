@@ -42,31 +42,29 @@ export default {
       }
     },
     validateInput () {
+      this.$store.commit('setUserRemoveMessage') // clear objet errorMessage
       const user = this.$store.getters.userLogado
 
-      if (!user.name) {
-        console.log('informe o nome')
-        this.hasError = true
-      }
-      if (!user.password) {
-        console.log('informe o password')
-        this.hasError = true
-      }
-
-      const search = this.dataLogins.find(el => el.login === user.name)
-      if (!search) {
-        console.log('Usuário não existe')
-        this.hasError = true
+      if (user.name === null) {
+        this.$store.commit('setUserAddMessage', 'O campo usuário é obrigatório')
+      } else if (user.password === null) {
+        this.$store.commit('setUserAddMessage', 'O campo senha é obrigatório')
       } else {
-        if (user.password !== String(search.password)) {
-          console.log('senha incorreta', user.password, search.password)
-          this.hasError = true
+        const search = this.dataLogins.find(el => el.login === user.name)
+        if (!search) {
+          this.$store.commit('setUserAddMessage', 'Ops, usuário inválido. Tente novamente!')
+        } else {
+          if (user.password !== String(search.password)) {
+            this.$store.commit('setUserAddMessage', 'Ops, senha inválida. Tente novamente!')
+          }
         }
-      }
-      if (!this.hasError) {
-        this.$router.push(this.url + '.html')
-        this.$store.commit('setUserActive', true)
-        document.location.reload(true)
+        if (!this.$store.getters.hasErrorMessage) {
+          this.$store.commit('setUserActive')
+          this.$store.commit('setUserLocal', search.local)
+          // this.$router.push(this.url + '.html')
+          // document.location.reload(true)
+          window.location = this.url + '.html'
+        }
       }
     },
     goToHomePage () {

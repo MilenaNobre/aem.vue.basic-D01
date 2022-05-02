@@ -4,12 +4,23 @@ export default {
   state: {
     logins: [],
     userLogado: {
-      name: '',
-      password: '',
-      active: false
+      name: null,
+      password: null,
+      location: '',
+      active: false,
+      errorMessage: ''
     }
   },
   mutations: {
+    setResetUserLogado (state) {
+      state.userLogado = {
+        name: null,
+        password: null,
+        location: '',
+        active: false,
+        errorMessage: ''
+      }
+    },
     setLogins (state, logins) {
       state.logins = logins
     },
@@ -19,8 +30,17 @@ export default {
     setUserPassword (state, password) {
       state.userLogado.password = password
     },
-    setUserActive (state, active) {
-      state.userLogado.active = active
+    setUserLocal (state, local) {
+      state.userLogado.location = local
+    },
+    setUserActive (state) {
+      state.userLogado.active = !state.userLogado.active
+    },
+    setUserAddMessage (state, message) {
+      state.userLogado.errorMessage = message
+    },
+    setUserRemoveMessage (state) {
+      state.userLogado.errorMessage = ''
     }
   },
   getters: {
@@ -29,6 +49,12 @@ export default {
     },
     userLogado (state) {
       return state.userLogado
+    },
+    hasErrorMessage (state) {
+      return state.userLogado.errorMessage !== ''
+    },
+    errorMessage (state) {
+      return state.userLogado.errorMessage
     }
   }
 }

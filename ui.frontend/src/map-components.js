@@ -11,6 +11,7 @@ import TextTitle from './components/TextTitle/TextTitle'
 import Input from './components/Input/Input'
 import Footer from './components/Footer/Footer'
 import BannerContainer from './components/BannerContainer/BannerContainer'
+import Message from './components/Message/Message'
 
 import {
   withComponentMappingContext,
@@ -77,3 +78,4 @@ MapTo('vue/components/text-title')(TextTitle)
 MapTo('vue/components/input')(Input)
 MapTo('vue/components/footer')(Footer)
 MapTo('vue/components/banner-container')(BannerContainer)
+MapTo('vue/components/message')(Message)

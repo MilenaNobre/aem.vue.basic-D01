@@ -1,12 +1,14 @@
 <template>
-  <div class="container-right">
-    <img src="/content/dam/vue/Logo-Compasso.png" />
+  <div>
+    <p v-if="this.$store.getters.hasErrorMessage">
+      {{ this.$store.getters.errorMessage }}
+    </p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'BannerContainer'
+  name: 'Message'
 }
 </script>
 

@@ -1,23 +1,37 @@
 <template>
   <header>
-    <h1>OLÁ, SOU UM HEADER</h1>
-    <p>SOU O TEXTO DO HEADER</p>
+    <div class="nav">
+      <img src="/content/dam/vue/LogoCompassoPreta.png" />
+      <div>
+        <h1>{{ date.getHours() }}:{{ date.getMinutes() }}</h1>
+        <p>{{ week }}, {{ date.getDate() }} de {{ month }} de {{ date.getFullYear() }}</p>
+      </div>
+       <weather></weather>
+    </div>
   </header>
 </template>
 
 <script>
-// Imports
+import Weather from '@/components/Weather/Weather'
+import DateEnum from '@/enums/modules/date'
 
 export default {
-  name: 'Header'
+  name: 'Header',
+  components: { Weather },
+  data () {
+    return {
+      date: new Date(),
+      week: '',
+      month: ''
+    }
+  },
+  mounted () {
+    this.week = DateEnum.WEEKDAY[this.date.getDay()]
+    this.month = DateEnum.MONTHS[this.date.getMonth()]
+  }
 }
 </script>
 
-<style scoped>
-header {
-  background-color: #eee;
-}
-h1 {
-  color: red;
-}
+<style lang="scss" scoped>
+@import "./index.scss";
 </style>

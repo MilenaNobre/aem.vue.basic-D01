@@ -15,6 +15,12 @@ Vue.use({
     Vue.prototype.$http = axios.create({
       baseURL: 'https://desafio-login-compass-default-rtdb.firebaseio.com/'
     })
+    Vue.prototype.$weather = axios.create({
+      baseURL: 'http://api.weatherapi.com/v1/'
+    })
+    Vue.prototype.$location = axios.create({
+      baseURL: 'https://servicodados.ibge.gov.br/api/v1/'
+    })
   }
 })
 

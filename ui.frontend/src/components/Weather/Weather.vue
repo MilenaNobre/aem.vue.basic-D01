@@ -1,53 +1,45 @@
 <template>
-  <div>
-    <div className="weather-icon">
-      <img :src="'http://openweathermap.org/img/w/' + this.state.icon + '.png'"/>
+  <div class="container-weather">
+    <p class="region">{{ state.city }} - {{ state.sigla }}</p>
+    <div class="weather-icon">
+      <img :src="state.icon"/>
+      <p class="temperature">{{ state.temp }}</p>
     </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 
 export default {
   name: 'Weather',
   data () {
     return {
-      state: {}
+      state: {
+        city: '',
+        region: '',
+        sigla: '',
+        icon: '',
+        temp: ''
+      },
+      userLogado: this.$store.getters.userLogado
     }
   },
-  created () {
-    const options = {
-      method: 'GET',
-      url: 'https://community-open-weather-map.p.rapidapi.com/weather',
-      params: {
-        q: 'Brazil,br',
-        lat: '-31.396646856036423',
-        lon: '-52.67586252253379',
-        callback: 'weather',
-        id: '2172797',
-        lang: 'Portuguese - pt',
-        units: 'metric',
-        mode: 'json'
-      },
-      headers: {
-        'X-RapidAPI-Host': 'community-open-weather-map.p.rapidapi.com',
-        'X-RapidAPI-Key': '120b4f968emshfc00f8d20f1bf32p1914edjsneb3b43fd630d'
-      }
-    }
-    axios.request(options).then((response) => {
-      const data = response.data
-      this.state = data.weather
-      console.error(this.state)
-    }).catch(function (error) {
-      console.error(error)
+  mounted () {
+    const params = new URLSearchParams({ key: 'b1f8dcd7a82042f48e6171105222804', q: this.userLogado.location, aqi: 'no' })
+    this.$weather.get(`/current.json?${params}`).then(resp => {
+      this.state.icon = resp.data.current.condition.icon
+      this.state.temp = resp.data.current.temp_c + 'º'
+      this.state.city = resp.data.location.name
+      this.state.region = resp.data.location.region
+      this.$location.get('/localidades/estados').then(resp => {
+        this.state.sigla = resp.data.find((state) => state.nome === this.state.region).sigla
+      })
     })
   }
 }
 </script>
 
-<style scoped>
-img {
-  width: 70px
-}
+<style lang="scss" scoped>
+@import "./index.scss";
 </style>

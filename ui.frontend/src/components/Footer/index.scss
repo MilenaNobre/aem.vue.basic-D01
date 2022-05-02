@@ -1,5 +1,12 @@
 @import url('http://fonts.cdnfonts.com/css/montserrat');
 footer {
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    position: fixed;
+    width: 100%;
+}
+.footer-simple {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 14px;
@@ -7,12 +14,64 @@ footer {
     text-align: center;
     color: #BDBDBD !important;
 
-    bottom: 0;
-    left: 0;
-    height: 60px;
-    position: fixed;
-    width: 100%;
 }
 span {
     font-weight: bold;
+}
+.footer-home {
+    background: linear-gradient(90.16deg, #33383D 0%, #1C1D20 100%);
+    font-family: 'Poppins';
+}
+.p-home-text {
+    font-size: 12px;
+    color: #FFFFFF;
+    padding-left: 100px;
+    padding-right: 50px;
+    text-align: right;
+    width: 50%;
+}
+.p-home-temp {
+    font-size: 14px;
+    color: #FFFFFF;
+    padding-left: 100px;
+    padding-right: 25px;
+    text-align: right;
+    width: 5%;
+}
+.barra {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border: 1px solid #FFFFFF;
+}
+.container-temp {
+    font-size: 10px;
+    color: #FFFFFF;
+    text-align: right;
+    width: 3%;
+    margin: 20px;
+    padding: 0;
+    line-height: 14px;
+}
+.seconds {
+    font-size: 25px;
+}
+.buttons {
+    display: flex;
+    justify-content: right;
+}
+.button-logout {
+    padding-inline: 20px;
+    color: white;
+    background: linear-gradient(90.16deg, #33383D 0%, #1C1D20 100%);
+    font-weight: 700;
+    font-size: 12px;
+    cursor:pointer;
+}
+.button-continue{
+    background: #FFFFFF;
+    font-size: 10px;
+    color: #C13216;
+    width: 100px;
+    margin-bottom: 6px;
+    cursor:pointer;
 }

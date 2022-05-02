@@ -1,7 +1,12 @@
 <template>
-  <div :class="styleTitle">
-    <p :style="{ color, fontFamily : font }"> {{ text }}</p>
-  </div>
+ <div>
+   <div v-if="StyleList.includes(styleTitle)" class="div-home" :class="styleTitle">
+     <p :style="{ color, fontFamily : font }"> {{ text }}</p>
+   </div>
+   <div v-else class="div-title" :class="styleTitle">
+     <p :style="{ color, fontFamily : font }"> {{ text }}</p>
+   </div>
+ </div>
 </template>
 
 <script>
@@ -22,6 +27,11 @@ export default {
     },
     text: {
       type: String
+    }
+  },
+  data () {
+    return {
+      StyleList: ['page-home-title', 'page-home-subtitle']
     }
   }
 }

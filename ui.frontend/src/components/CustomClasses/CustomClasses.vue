@@ -18,29 +18,6 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.bg-gray {
-  height: 1080px;
-  background: linear-gradient(to right top, #26292c, #2e3032, #363739, #3e3e3f, #464646);
-}
-
-.img-mobile {
-  background: url('/content/dam/vue/Logo-Compasso.png');
-}
-.container-center {
-  display: grid;
-  justify-content: center;
-}
-.logo-mobile {
-  display: none;
-}
-
-@media(max-width: 960px) {
-  .container-right {
-    display: none;
-  }
-  .logo-mobile {
-     width: 20vw;
-  }
-}
+<style lang="scss" scoped>
+@import "./index.scss";
 </style>
