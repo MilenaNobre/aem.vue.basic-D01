@@ -75,3 +75,27 @@ span {
     margin-bottom: 6px;
     cursor:pointer;
 }
+
+.text-footer-hidden {
+    display: flex;
+}
+
+@media(max-width: 960px) {
+    .text-footer-hidden {
+        display: none;
+    }
+    .buttons-change {
+        height: 90px;
+    }
+    footer {
+        height: 80px;
+    }
+}
+
+@media(min-width: 960px) {
+    .mode-desktop {
+        display: flex;
+        justify-content: space-between;
+    }
+
+}

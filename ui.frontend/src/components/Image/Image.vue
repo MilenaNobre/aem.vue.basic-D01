@@ -1,5 +1,5 @@
 <template>
-  <img :src="src" />
+  <img :src="src" class="scarecrow"/>
 </template>
 
 <script>
@@ -9,21 +9,19 @@ export default {
     src: {
       type: String
     }
+  },
+  mounted () {
+    const containerLeft = document.querySelector('[cqpath="/content/vue/vue/home/jcr:content/root/responsivegrid/container"] div')
+    const img = document.querySelector('[cqpath="/content/vue/vue/home/jcr:content/root/responsivegrid/container/image"] img')
+
+    if (containerLeft) {
+      img.classList.remove('scarecrow')
+      img.classList.add('bg-img')
+    }
   }
 }
 </script>
 
-<style scoped>
-img {
-  width: 40vw;
-}
-
-@media (max-width: 650px) {
-  img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
+<style lang="scss">
+@import "./index.scss";
 </style>

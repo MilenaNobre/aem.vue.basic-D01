@@ -2,7 +2,7 @@
   <header>
     <div class="nav">
       <img src="/content/dam/vue/LogoCompassoPreta.png" />
-      <div>
+      <div class="timer">
         <h1>{{ date.getHours() }}:{{ date.getMinutes() }}</h1>
         <p>{{ week }}, {{ date.getDate() }} de {{ month }} de {{ date.getFullYear() }}</p>
       </div>
@@ -20,9 +20,13 @@ export default {
   components: { Weather },
   data () {
     return {
-      date: new Date(),
       week: '',
       month: ''
+    }
+  },
+  computed: {
+    date () {
+      return new Date()
     }
   },
   mounted () {

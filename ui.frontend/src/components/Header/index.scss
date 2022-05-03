@@ -19,3 +19,9 @@ p {
   line-height: 40px;
   margin: 0;
 }
+
+@media(max-width: 960px) {
+  .timer {
+    display: none;
+  }
+}

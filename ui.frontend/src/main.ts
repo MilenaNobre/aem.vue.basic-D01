@@ -1,4 +1,7 @@
+import '@fortawesome/fontawesome-free/css/all.css'
+import '@fortawesome/fontawesome-free/js/all.js'
 import './map-components'
+
 import { AuthoringUtils, ModelManager } from '@adobe/aem-spa-page-model-manager'
 import Vue from 'vue'
 import App from './App'
@@ -6,9 +9,6 @@ import VueRouter from 'vue-router'
 import { Constants } from '@mavice/aem-vue-editable-components'
 import axios from 'axios'
 import store from './store/store'
-
-import '@fortawesome/fontawesome-free/css/all.css'
-import '@fortawesome/fontawesome-free/js/all.js'
 
 Vue.use({
   install (Vue) {

@@ -4,25 +4,28 @@
 }
 
 .img-mobile {
-  background: url('/content/dam/vue/Logo-Compasso.png');
+background: url('/content/dam/vue/Logo-Compasso.png');
 }
 .container-center {
-  display: grid;
-  justify-content: center;
+display: grid;
+justify-content: center;
 }
 .logo-mobile {
-  display: none;
+display: none;
 }
 
 @media(max-width: 960px) {
-  .container-right {
-    display: none;
-  }
-  .logo-mobile {
-    width: 20vw;
-  }
+.container-right {
+display: none;
+}
+.hidden-text {
+display: none;
+}
+.logo-mobile {
+width: 20vw;
+}
 }
 
 .container-right-home {
-  margin-top: 5%;
+margin-top: 5%;
 }

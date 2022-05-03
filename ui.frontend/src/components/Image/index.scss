@@ -1,0 +1,18 @@
+.img {
+  width: 40vw;
+}
+
+@media (max-width: 650px) {
+  .scarecrow {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .bg-img {
+    width: 96vw;
+    height: 140vw;
+  }
+}
+.bg-img {
+  height: 40vw;
+}

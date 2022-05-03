@@ -1,7 +1,7 @@
 <template>
   <footer :class="styleFooter">
-    <div v-if="text" style="display: flex; justify-content: space-between;">
-      <div style="display: flex;">
+    <div v-if="text" class="mode-desktop">
+      <div class="text-footer-hidden">
         <p class="p-home-text">
           {{ text }}
         </p>
@@ -14,7 +14,7 @@
           seconds
         </p>
       </div>
-      <div class="buttons">
+      <div class="buttons buttons-change">
         <button class="button-continue" @click="reload">Continuar navegando</button>
         <button class="button-logout" @click="logout">Logout</button>
       </div>
@@ -71,6 +71,9 @@ export default {
   },
   mounted () {
     this.initSession()
+
+    const hiddenTextHome = document.querySelector('[cqpath="/content/vue/vue/home/jcr:content/root/responsivegrid/container_456793718"] div')
+    hiddenTextHome.classList.add('hidden-text')
   }
 }
 </script>
