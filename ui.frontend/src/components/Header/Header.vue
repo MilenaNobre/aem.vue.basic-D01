@@ -3,7 +3,7 @@
     <div class="nav">
       <img src="/content/dam/vue/LogoCompassoPreta.png" />
       <div class="timer">
-        <h1>{{ date.getHours() }}:{{ date.getMinutes() }}</h1>
+        <h1>{{ date.getHours() }}:{{ date.getMinutes().toString().replace(/^(\d)$/, '0$1') }}</h1>
         <p>{{ week }}, {{ date.getDate() }} de {{ month }} de {{ date.getFullYear() }}</p>
       </div>
        <weather></weather>
